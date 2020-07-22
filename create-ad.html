@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/scss/main.css">
+        <title>Rent App</title>
+    </head>
+    <body>
+        <header>
+            <h1>Rent App</h1>
+        </header>
+        <main>
+            <section class="create-ad-section">
+                <form action="/ads" method="POST">
+                    <h2>Post your ad:</h2>
+                    <textarea name="title" id="title" cols="30" rows="1" maxlength="150" placeholder="Ad title"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="1" maxlength="500" placeholder="Ad description"></textarea>
+                    <select name="type" id="">
+                        <optgroup>
+                            <option value="1 room">1 room</option>
+                            <option value="2 rooms">2 rooms</option>
+                            <option value="3 rooms">3 rooms</option>
+                        </optgroup>
+                    </select>
+                    <input name="address" id="address" type="text" placeholder="Address">
+                    <input name="price" id="price" type="text" placeholder="Price">
+                    <input name="phone" id="phone" type="text" placeholder="Phone number">
+                    <button type="submit">Post</button>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>

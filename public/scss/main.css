@@ -1,5 +1,18 @@
 body {
   margin: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  background: url("/home4.jpg") no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+header h1 {
+  color: white;
+  font-size: 60px;
+  text-shadow: 5px 5px 6px #524f4e;
+  font-family: 'Pacifico', cursive;
 }
 
 body {
@@ -12,11 +25,7 @@ body {
 }
 
 .landing-header h1 {
-  color: white;
   margin-top: 30vh;
-  font-size: 60px;
-  text-shadow: 5px 5px 6px #524f4e;
-  font-family: 'Pacifico', cursive;
 }
 
 .landing-section .create-ad, .landing-section .view-ads {
@@ -49,6 +58,60 @@ body {
   }
   .landing-section .create-ad, .landing-section .view-ads {
     margin-top: 20px;
+  }
+}
+
+.create-ad-section form {
+  background: rgba(93, 97, 94, 0.4);
+  width: 400px;
+  margin: auto;
+  border-radius: 20px;
+  border-style: none;
+}
+
+.create-ad-section form h2 {
+  padding-top: 20px;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+.create-ad-section form input, .create-ad-section form textarea, .create-ad-section form select {
+  display: block;
+  margin: auto;
+  width: 75%;
+  height: 30px;
+  margin-top: 25px;
+  border-radius: 15px;
+  border-style: none;
+  outline: none;
+}
+
+.create-ad-section form button {
+  background-color: white;
+  width: 100px;
+  height: 30px;
+  margin: 25px 0;
+  border-radius: 15px;
+  border-style: none;
+  color: #0f4c75;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  outline: none;
+}
+
+.create-ad-section form button:hover {
+  color: white;
+  background-color: #0f4c75;
+}
+
+@media only screen and (max-width: 400px) {
+  .create-ad-section form {
+    width: 300px;
+  }
+  .create-ad-section form input, .create-ad-section form textarea, .create-ad-section form select {
+    margin-top: 18px;
+    height: 25px;
   }
 }
 /*# sourceMappingURL=main.css.map */

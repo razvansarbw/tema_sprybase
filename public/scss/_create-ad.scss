@@ -1,0 +1,61 @@
+.create-ad-section {
+    form {
+        background: rgba(93, 97, 94, 0.4);
+        width: 400px;
+        margin: auto;
+        border-radius: 20px;
+        border-style: none;
+
+        h2 {
+            padding-top: 20px;
+            color: white;
+            font-family: 'Lato', sans-serif;
+        }
+
+        input, textarea, select {
+            display: block;
+            margin: auto;
+            width: 75%;
+            height: 30px;
+            margin-top: 25px;
+            border-radius: 15px;
+            border-style: none;
+            outline: none;
+        }
+
+        button {
+            background-color: white;
+            width: 100px;
+            height: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            border-style: none;
+            color: #0f4c75;
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+            font-size: 14px;
+            outline: none;
+        }
+
+        button:hover {
+            color: white;
+            background-color: #0f4c75;
+        }
+        
+    }
+
+   
+}
+
+@media only screen and (max-width: 400px) {
+    .create-ad-section {
+        form {
+            width: 300px;
+        }
+
+        form input, form textarea, form select {
+            margin-top: 18px;
+            height: 25px;
+        }
+    }
+}

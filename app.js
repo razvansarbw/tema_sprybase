@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/home.html");
 });
 
+app.get("/ads", (req, res) => {
+    res.sendFile(__dirname + "/create-ad.html");
+});
+
 
 mongoose.connect('mongodb://localhost:27017/sprybaseHomework', {
     useUnifiedTopology: true,
