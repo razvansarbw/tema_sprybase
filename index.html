@@ -3,18 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rent aps</title>
+        <title>Rent App</title>
     </head>
     <body>
         <h1>Salut!</h1>
         <form action="/ads" method="POST">
-            <textarea name="title" id="" cols="30" rows="3" maxlength="150"></textarea>
+            <label for="title">Titlu:</label>
+            <textarea name="title" id="title" cols="30" rows="3" maxlength="150"></textarea>
             <br>
-            <textarea name="description" id="" cols="30" rows="3" maxlength="500"></textarea><br>
-            <input name="type" type="text" placeholder="Type of apartment"><br>
-            <input name="address" type="text" placeholder="Address"><br>
-            <input name="price" type="text" placeholder="Price"><br>
-            <input name="phone" type="text" placeholder="Phone number"><br>
+            <label for="description">Descriere:</label>
+            <textarea name="description" id="description" cols="30" rows="3" maxlength="500"></textarea><br>
+            <label for="type">Tip apartament:</label>
+            <input name="type" id="type" type="text" placeholder="Type of apartment"><br>
+            <label for="address">Address:</label>
+            <input name="address" id="address" type="text" placeholder="Address"><br>
+            <label for="price">Price:</label>
+            <input name="price" id="price" type="text" placeholder="Price"><br>
+            <label for="phone">Phone:</label>
+            <input name="phone" id="phone" type="text" placeholder="Phone number"><br>
             <button type="submit">Posteaza</button>
         </form>
     </body>
