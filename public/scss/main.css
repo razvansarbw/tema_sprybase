@@ -3,7 +3,7 @@ body {
   display: inline-block;
   width: 100%;
   height: 100vh;
-  background: url("/home4.jpg") no-repeat center center fixed;
+  background: url("home4.jpg") no-repeat center center fixed;
   background-size: cover;
   text-align: center;
 }
@@ -26,6 +26,10 @@ body {
 
 .landing-header h1 {
   margin-top: 30vh;
+}
+
+.landing-section {
+  margin-top: 75px;
 }
 
 .landing-section .create-ad, .landing-section .view-ads {
@@ -59,6 +63,10 @@ body {
   .landing-section .create-ad, .landing-section .view-ads {
     margin-top: 20px;
   }
+}
+
+.create-ad-header h1 {
+  margin: 50px 0;
 }
 
 .create-ad-section form {
@@ -106,6 +114,9 @@ body {
 }
 
 @media only screen and (max-width: 400px) {
+  .create-ad-header h1 {
+    margin: 30px 0;
+  }
   .create-ad-section form {
     width: 300px;
   }
@@ -113,5 +124,30 @@ body {
     margin-top: 18px;
     height: 25px;
   }
+}
+
+.listing-ads-header h1 {
+  margin: 50px 0;
+}
+
+.ads .ad {
+  background-color: white;
+  width: 500px;
+  font-family: 'Lato', sans-serif;
+  border-radius: 25px;
+}
+
+.ads .ad .carousel .carousel-inner img {
+  border-radius: 25px 25px 0 0;
+  height: 300px;
+}
+
+.ads .ad .ad-info {
+  text-align: initial;
+}
+
+.ads .ad .ad-info .title {
+  text-align: center;
+  margin: 15px 0;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-
+const expressLayouts = require("express-ejs-layouts");
 
 const app = express();
 
@@ -9,15 +9,40 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('resources'));
 app.use(express.static('public'));
+app.use('/uploads', express.static('uploads'));
+
+app.use(expressLayouts);
+app.set("view engine", 'ejs');
+
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './uploads');
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+const fileFilter = (req, file, cb) => {
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+        cb(null, true);
+    } else {
+        cb(null, false);
+    }
+}
+
+const upload = multer({storage: storage, fileFilter: fileFilter});
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/home.html");
+    res.render("landing");
 });
 
-app.get("/ads", (req, res) => {
-    res.sendFile(__dirname + "/create-ad.html");
+app.get("/create-ads", (req, res) => {
+    //res.sendFile(__dirname + "/create-ad.html");
+    res.render("create-ad");
 });
-
 
 mongoose.connect('mongodb://localhost:27017/sprybaseHomework', {
     useUnifiedTopology: true,
@@ -55,19 +80,29 @@ db.once('open', () => {
         phone: {
             type: String,
             required: [true, "Every ad must have a contact number."]
+        },
+        apartmentImages: { 
+            type: [String]
+            // required: [true, "Every ad must have an image"]
         }
     });
 
     const Ad = mongoose.model('Ad', adSchema);
 
-    app.post("/ads", (req, res) => {
+    app.post("/ads", upload.array('apartmentImage') ,(req, res) => {
+        
+        let imgSources = [];
+
+        req.files.map(file => imgSources.push(file.path));
+
         const newAd = new Ad({
             title: req.body.title,
             description: req.body.description,
             type: req.body.type,
             address: req.body.address,
             price: req.body.price,
-            phone: req.body.phone
+            phone: req.body.phone,
+            apartmentImages: imgSources
         });
 
         newAd.save((err, ad) => {
@@ -77,8 +112,17 @@ db.once('open', () => {
                 console.log(`${ad.title} successfully added to the ads collection.`);
             }
         });
-
         res.redirect("/");
+    });
+
+    app.get("/ads", (req, res) => {
+        Ad.find((err, items) => {
+            if(err) {
+                console.log(err);
+            } else {
+                res.render('listing-ads', {ads: items});
+            }
+        });
     });
 
 });
