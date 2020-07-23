@@ -1,7 +1,7 @@
 body {
   margin: 0;
   display: inline-block;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: url("home4.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -130,24 +130,74 @@ body {
   margin: 50px 0;
 }
 
+.ads {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  background: rgba(93, 97, 94, 0.4);
+  width: 1100px;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+}
+
 .ads .ad {
   background-color: white;
-  width: 500px;
-  font-family: 'Lato', sans-serif;
+  width: 300px;
   border-radius: 25px;
 }
 
 .ads .ad .carousel .carousel-inner img {
   border-radius: 25px 25px 0 0;
-  height: 300px;
+  height: 200px;
 }
 
 .ads .ad .ad-info {
   text-align: initial;
+  padding: 0 15px 5px;
+  word-wrap: break-word;
+}
+
+.ads .ad .ad-info * {
+  margin: 0;
 }
 
 .ads .ad .ad-info .title {
   text-align: center;
   margin: 15px 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  .ads {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    width: 700px;
+  }
+  .ads .ad {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .ads {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    width: 400px;
+  }
+  .ads .ad {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .ads {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    width: 350px;
+  }
+  .ads .ad {
+    width: 300px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

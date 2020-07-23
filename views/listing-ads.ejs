@@ -3,34 +3,41 @@
 </header>
 <main>
     <section class="ads">
+      <% for(let i = 0; i < ads.length; ++i) { %>
         <div class="ad">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="<%= ads[0].apartmentImages[0] %>" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="<%= ads[0].apartmentImages[1] %>" class="d-block w-100" alt="...">
-                  </div>
+          <div class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="<%= ads[i].apartmentImages[0] %>" class="d-block w-100" alt="...">
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
+                <% for(let j = 1; j < ads[i].apartmentImages.length; ++j) { %>
+                  <div class="carousel-item">
+                    <img src="<%= ads[i].apartmentImages[j] %>" class="d-block w-100" alt="...">
+                  </div>
+                <% } %>
               </div>
-              <div class="ad-info">
-                <h3 class="title"><%= ads[0].title %></h3>
-                <p class="description"><%= ads[0].description %></p>
-                <p class="type"><%= ads[0].type %></p>
-                <p class="address"><%= ads[0].address %></p>
-                <p class="phone"><%= ads[0].phone %></p>
-                <p class="price"><%= ads[0].price %></p>
-              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <div class="ad-info">
+              <h3 class="title"><%= ads[i].title %></h3>
+              <p class="description">Descriere: <%= ads[i].description %></p>
+              <p class="type">Type: <%= ads[i].type %></p>
+              <p class="address">Address: <%= ads[i].address %></p>
+              <p class="phone">Phone: <%= ads[i].phone %></p>
+              <p class="price"><%= ads[i].price %> &euro;</p>
+            </div>
         </div>
+      <% } %>
+        
+
+
 
     </section>
     

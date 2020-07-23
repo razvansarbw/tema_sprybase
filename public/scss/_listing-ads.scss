@@ -5,25 +5,36 @@
 }
 
 .ads {
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    background: rgba(93, 97, 94, 0.4);
+    width: 1100px;
+    margin: auto;
+    font-family: 'Lato', sans-serif;
 
     .ad {
         background-color: white;
-        width: 500px;
-        font-family: 'Lato', sans-serif;
+        width: 300px;
         border-radius: 25px;
 
         .carousel {
             .carousel-inner {
                 img {
                     border-radius: 25px 25px 0 0;
-                    height: 300px;
+                    height: 200px;
                 }
             }
         }
 
         .ad-info {
             text-align: initial;
+            padding: 0 15px 5px;
+            word-wrap: break-word;
+
+            * {
+                margin: 0;
+            }
 
             .title {
                 text-align: center;
@@ -33,4 +44,37 @@
     }
 
     
+}
+
+@media only screen and (max-width: 1100px) {
+    .ads {
+        grid-template-columns: 1fr 1fr;
+        width: 700px;
+
+        .ad {
+            width: 300px;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .ads {
+        grid-template-columns: 1fr;
+        width: 400px;
+
+        .ad {
+            width: 300px;
+        }
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    .ads {
+        grid-template-columns: 1fr;
+        width: 350px;
+
+        .ad {
+            width: 300px;
+        }
+    }
 }
