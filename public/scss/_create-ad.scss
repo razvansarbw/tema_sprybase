@@ -23,9 +23,11 @@
             margin: auto;
             width: 75%;
             height: 30px;
-            margin-top: 25px;
+            margin-top: 20px;
+            border: 2px;
             border-radius: 15px;
-            border-style: none;
+            border-style: solid;
+            border-color: white;
             outline: none;
         }
 
@@ -48,6 +50,17 @@
             background-color: #0f4c75;
         }
         
+        .conditions {
+            width: 75%;
+            margin: auto;
+            margin-top: 15px;
+            p {
+                color: white;
+                text-align: initial;
+                margin: 0;
+                font-size: 15px;
+            }
+        }
     }
 
    

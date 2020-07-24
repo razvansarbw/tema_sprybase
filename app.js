@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('resources'));
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
+app.use('/js', express.static("js"));
 
 app.use(expressLayouts);
 app.set("view engine", 'ejs');
@@ -82,8 +83,8 @@ db.once('open', () => {
             required: [true, "Every ad must have a contact number."]
         },
         apartmentImages: { 
-            type: [String]
-            // required: [true, "Every ad must have an image"]
+            type: [String],
+            required: [true, "Every ad must have an image"]
         }
     });
 

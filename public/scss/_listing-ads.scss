@@ -7,10 +7,12 @@
 .ads {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 50px;
     justify-items: center;
     background: rgba(93, 97, 94, 0.4);
     width: 1100px;
     margin: auto;
+    padding: 20px 0;
     font-family: 'Lato', sans-serif;
 
     .ad {

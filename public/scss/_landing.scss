@@ -11,11 +11,19 @@ body {
     h1 {
         margin-top: 30vh;
     }
+
+    p {
+        padding-top: 20px;
+        font-size: 25px;
+        color: white;
+        font-family: 'Pacifico', cursive;
+        text-shadow: 5px 5px 6px #524f4e;
+    }
 }
 
 .landing-section {
 
-    margin-top: 75px;
+    margin-top: 50px;
 
     .create-ad, .view-ads {
         display: inline-block;

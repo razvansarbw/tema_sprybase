@@ -5,8 +5,8 @@
     <section class="create-ad-section">
         <form action="/ads" method="POST" enctype="multipart/form-data">
             <h2>Post your ad:</h2>
-            <textarea name="title" id="title" cols="30" rows="1" maxlength="150" placeholder="Ad title"></textarea>
-            <textarea name="description" id="description" cols="30" rows="1" maxlength="500" placeholder="Ad description"></textarea>
+            <textarea class="user-input" name="title" id="title" cols="30" rows="1" maxlength="150" placeholder="Ad title"></textarea>
+            <textarea class="user-input" name="description" id="description" cols="30" rows="1" maxlength="500" placeholder="Ad description"></textarea>
             <select name="type" id="">
                 <optgroup>
                     <option value="1 room">1 room</option>
@@ -14,11 +14,17 @@
                     <option value="3 rooms">3 rooms</option>
                 </optgroup>
             </select>
-            <input name="address" id="address" type="text" placeholder="Address">
-            <input name="price" id="price" type="text" placeholder="Price">
-            <input name="phone" id="phone" type="text" placeholder="Phone number">
-            <input type="file" id="img" name="apartmentImage" accept="image/*" multiple>
-            <button type="submit">Post</button>
+            <input class="user-input" name="address" id="address" type="text" placeholder="Address">
+            <input class="user-input" name="price" id="price" type="text" placeholder="Price">
+            <input class="user-input" name="phone" id="phone" type="text" placeholder="Phone number">
+            <input id="file-input" type="file" id="img" name="apartmentImage" accept="image/*" multiple>
+            <div class="conditions">
+                <p>*all fields are mandatory</p>
+                <p>*you need to upload at least 2 images</p>
+            </div>
+            
+            <button id="post-ad-button" type="submit">Post</button>
         </form>
     </section>
 </main>
+<script src="./js/create-ad.js"></script>
