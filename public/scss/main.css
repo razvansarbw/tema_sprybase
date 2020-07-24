@@ -138,7 +138,7 @@ body {
 
 @media only screen and (max-width: 400px) {
   .create-ad-header h1 {
-    margin: 30px 0;
+    margin: 80px 0;
   }
   .create-ad-section form {
     width: 300px;
